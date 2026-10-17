@@ -1,0 +1,21 @@
+{
+  "servers": {
+    "builtin": {
+      "transport": "stdio",
+      "command": "python",
+      "args": ["-m", "app.mcp_tools.server"],
+      "env": {
+        "SQLITE_DB_PATH": "${SQLITE_DB_PATH}",
+        "SQLITE_ALLOW_WRITE": "${SQLITE_ALLOW_WRITE}"
+      }
+    },
+    "qdrant": {
+      "transport": "stdio",
+      "command": "python",
+      "args": ["-m", "app.mcp_tools.qdrant_server"],
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
+    }
+  }
+}
